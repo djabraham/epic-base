@@ -1,0 +1,108 @@
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team
+// ${file}: the current opened file
+// ${fileBasename}: the current opened file's basename
+// ${fileDirname}: the current opened file's dirname
+// ${fileExtname}: the current opened file's extension
+// ${cwd}: the current working directory of the spawned process
+
+// C:\Program Files (x86)\git\bin\bash.exe
+
+{
+  "version": "0.1.0",
+  "command": "gulp",
+  "isShellCommand": true,
+  "args": [],
+  "tasks": [
+    {
+        "taskName": "server-build",
+        "problemMatcher": ["$tsc"],
+        "isBuildCommand": true
+    },
+    {
+        "taskName": "library-build",
+        "problemMatcher": ["$tsc"],
+        "isBuildCommand": true
+    },
+    {
+      "taskName": "client-tslint",
+      "args": [],
+      "isBuildCommand": true,
+      "showOutput": "always",
+      "isWatching": false,
+      "problemMatcher": [
+        {
+          "owner": "gulp",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}/source/client/"
+          ],
+          "pattern": {
+            "regexp": "\\[[^\\]]+\\] \\[[^\\]]+\\] (\\S+) \\([^\\)]+\\) ([^\\[]+)\\[(\\d+), (\\d+)\\]: (.+)",
+            "file": 2,
+            "line": 3,
+            "column": 4,
+            "severity": 1,
+            "message": 5
+          }
+        }
+      ]
+    },
+    {
+      "taskName": "library-tslint",
+      "args": [],
+      "isBuildCommand": true,
+      "showOutput": "always",
+      "isWatching": false,
+      "problemMatcher": [
+        {
+          "owner": "gulp",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}/source/library/"
+          ],
+          "pattern": {
+            "regexp": "\\[[^\\]]+\\] \\[[^\\]]+\\] (\\S+) \\([^\\)]+\\) ([^\\[]+)\\[(\\d+), (\\d+)\\]: (.+)",
+            "file": 2,
+            "line": 3,
+            "column": 4,
+            "severity": 1,
+            "message": 5
+          }
+        }
+      ]
+    },
+    {
+      "taskName": "client-watch",
+      "args": [],
+      "isBuildCommand": true,
+      "showOutput": "always",
+      "isWatching": true,
+      "problemMatcher": [
+        {
+          "owner": "gulp",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}/"
+          ],
+          "pattern": [
+            {
+              "regexp": "^ERROR in (.+)$",
+              "file": 1
+            },
+            {
+              "regexp": "^((\\(|\\[)(\\d+),\\s?(\\d+)(\\)|\\])): (error|warning)?(\\sTS.+:)?(.+)$",
+              "line": 3,
+              "column": 4,
+              "severity": 6,
+              "message": 8,
+              "loop": true
+            }
+          ],
+          "watchedTaskBeginsRegExp": "\\[[^\\]]+\\] Version: webpack .*",
+          "watchedTaskEndsRegExp": "\\[[^\\]]+\\] webpack is watching for changes"
+        }
+      ]
+    }
+  ]
+}

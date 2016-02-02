@@ -1,0 +1,210 @@
+﻿/*
+   Setting the font size in the body tag is key, as it will dictate the size of the standard em unit.
+   In order for the svg nodes to consistently render, everything must be relative to em units.
+*/
+
+body {
+    color: $fontColorPrimary;
+    font-family: $fontFamilyPrimary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.2;
+    font-size: $fontSizePrimary;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: $fontFamilyHeaders;
+    color: $fontColorHeaders;
+}
+
+
+h1, .h1 {
+    font-size: 2.0em;
+    font-weight: 1000;
+}
+
+h2, .h2 {
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+h3, .h3 {
+    font-size: 1.6em;
+    font-weight: 800;
+}
+
+h4, .h4 {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+h5, .h5 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+h6, .h6 {
+    font-size: 1.0em;
+    font-weight: 500;
+}
+
+h7, .h7 {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    line-height: 1.3;
+    margin: 0.75em 0 0.5em ;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, .h7 {
+    line-height: 1.3;
+    margin: 0 0 2px 0;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+br {
+    line-height: 0.9;
+}
+
+hr {
+    border-top: 1px solid $lightBorderColor;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 0;
+}
+
+p, .p {
+    font-size: 1.0em;
+}
+
+.p1 {
+    font-size: 2.0em;
+}
+
+.p2 {
+    font-size: 1.8em;
+}
+
+.p3 {
+    font-size: 1.6em;
+}
+
+.p4 {
+    font-size: 1.4em;
+}
+
+.p5 {
+    font-size: 1.2em;
+}
+
+.p6 {
+    font-size: 1.0em;
+}
+
+.p7 {
+    font-size: 0.9em;
+}
+
+a {
+    color: $fontColorLinksNormal;
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        color: $fontColorLinksHover;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+/* the a often covers more area than the i, as in buttons */
+a i {
+    color: $fontColorLinksNormal;
+}
+
+    a.active i, a:active i, a:hover i, a:focus i {
+        color: $fontColorLinksHover;
+    }
+
+
+.nosel {
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.sel-text {
+    user-select: text;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.wrap {
+    white-space: normal;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+
+
+// $fontSizeH1: 2.0em !default;
+// $fontSizeH2: 1.8em !default;
+// $fontSizeH3: 1.6em !default;
+// $fontSizeH4: 1.4em !default;
+// $fontSizeH5: 1.2em !default;
+// $fontSizeH6: 1.0em !default;
+// $fontSizeH7: 0.9em !default;
+// $fontWeightH1: 400 !default;
+// $fontWeightH2: 400 !default;
+// $fontWeightH3: 300 !default;
+// $fontWeightH4: 300 !default;
+// $fontWeightH5: 200 !default;
+// $fontWeightH6: 200 !default;
+// $fontWeightH7: 200 !default;
+// $headings: (h1, $fontSizeH1, $fontWeightH1),
+//            (h2, $fontSizeH2, $fontWeightH1),
+//            (h3, $fontSizeH3, $fontWeightH1),
+//            (h4, $fontSizeH4, $fontWeightH1),
+//            (h5, $fontSizeH5, $fontWeightH1),
+//            (h6, $fontSizeH6, $fontWeightH1),
+//            (h7, $fontSizeH7, $fontWeightH1);
+
+// h1, h2, h3, h4, h5, h6,
+// .h1, .h2, .h3, .h4, .h5, .h6 {
+//   margin: 0;
+//   font-family: $header-font-family;
+//   line-height: $header-line-height;
+//
+//   small {
+//     color: $base-muted-color;
+//   }
+// }
+//
+// @each $heading, $heading-size, $heading-weight in $headings {
+//   #{$heading}, .#{$heading} {
+//     font-size: $heading-size;
+//     font-weight: $heading-weight;
+//
+//     > small, > .small {
+//       font-size: $heading-size * 0.8;
+//     }
+//   }
+// }
+//

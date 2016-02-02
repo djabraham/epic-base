@@ -1,0 +1,131 @@
+
+
+body, html {
+    overflow: auto;
+    height: 100%;
+}
+
+/* major pane are at top and are in order relative to flex relationship
+     pane-columns is the outermost relative, so internal content shouldn't spill into body */
+
+@mixin flex-container-cols {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+@mixin flex-container-rows {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+@mixin contain-full-height {
+    position: absolute;
+    min-height: 100vh;
+    max-height: 100vh;
+    background: $lightBackgroundColor;
+    border-right: 1px solid $mediumBorderColor;
+}
+
+.pane-columns {
+    @include flex-container-cols;
+    min-height: 100vh;
+    max-height: 100vh;
+    user-select: none;
+}
+
+.pane-rows {
+    @include flex-container-rows;
+    flex: auto;
+    min-height: 100vh;
+}
+
+
+.pane-native {
+    z-index: 10;
+    position: absolute;
+    overflow: hidden;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+    .pane-native .view-padded {
+        position: relative;
+        padding: 15px 5px 5px 15px;
+        overflow: visible;
+        height: 100%;
+        width: 100%;
+    }
+
+
+.view-native {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+    .view-native .view-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+
+
+.view-zone {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+    .view-zone .menu-zone {
+        flex: 0 0 100px;
+        position: relative;
+    }
+
+    .view-zone .menu-view {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .view-zone .cont-zone {
+        flex: 1 1 auto;
+        position: relative;
+        overflow: visible;
+    }
+
+    .view-zone .cont-view {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        animation-name: dropZone;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-duration: 0.375s;
+    }

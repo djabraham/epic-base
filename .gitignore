@@ -1,0 +1,4 @@
+node_modules/
+typings/
+
+# preserving dist folders for reference of js output

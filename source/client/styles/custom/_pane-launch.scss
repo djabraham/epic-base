@@ -1,0 +1,247 @@
+
+.pane-launch .cont-hidden {
+  display: none;
+}
+
+.pane-launch {
+    @include flex-container-cols;
+
+    flex: 0 0 $launchWidth;
+    max-width: 50vw;
+    min-width: 200px;
+    background-color: $lightBackgroundColor;
+    z-index: 500;
+}
+
+.pane-launch .pane-ctrl {
+    @include flex-container-cols;
+
+    flex: 0 0 $launchWidth;
+    z-index: 500;
+}
+
+.pane-launch .sect-left {
+    flex: 0 0 $launchSidebarWidth;
+    position: relative;
+    min-height: 100vh;
+}
+
+.pane-launch .sect-right {
+    flex: 1;
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+/* launch panes types are area or zone */
+
+/* area is a single launch panel */
+.pane-launch .area-buffered {
+    // @include trans-fade-in;
+
+    position: absolute;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border-right: 1px solid $mediumBorderColor;
+    background: $lightBackgroundColor;
+}
+
+    .pane-launch .area-buffered .vert {
+        overflow: visible;
+        // min-width: 250px;
+        // margin-right: -8px;
+    }
+
+.pane-launch .side-bar {
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    background: $darkBackgroundColor;
+}
+
+    .pane-launch .side-bar .icon-svg {
+        width: 30px;
+    }
+
+    .pane-launch .side-bar .icon-logo {
+        padding: 0 4px 8px 4px;
+        width: 50px;
+    }
+
+    .pane-launch .side-bar .fa-logo {
+        width: $launchSidebarWidth;
+        height: $launchSidebarWidth;
+        font-size: 36px;
+        text-align: center;
+        padding: 8px 0 0 2px;
+        color: #bbc; // $mediumBackgroundColor;
+    }
+
+    .pane-launch .side-bar .side-nav {
+        width: $launchSidebarWidth;
+        padding: 0;
+        margin: 5px 0;
+        list-style: none;
+    }
+
+    .pane-launch .side-bar .side-nav-tab {
+        width: $launchSidebarWidth - 8px;
+        text-align: center;
+        overflow: hidden;
+        height: 45px;
+    }
+
+    .pane-launch .side-bar .side-nav-name {
+        color: $iconLinksNormalColor;
+        font-weight: bold;
+        font-size: 0.5em;
+        text-wrap: none;
+    }
+
+    .pane-launch .side-bar .icon-box {
+        color: $iconLinksNormalColor;
+        font-weight: bold;
+        line-height: 1.5;
+        font-size: 1.1em;
+        text-wrap: none;
+    }
+        .pane-launch .side-bar .side-nav li {
+            width: $launchSidebarWidth - 6px;
+            margin-bottom: 4px;
+            margin-left: 6px;
+            font-size: 2em;
+            text-indent: 0;
+            line-height: 38px;
+            background: $mediumBackgroundColor;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-right: 2px solid $darkBorderColor;
+            cursor: pointer;
+            color: $fontColorHeaders;
+            user-select: none;
+        }
+
+            .pane-launch .side-bar .side-nav li.active {
+                width: $launchSidebarWidth - 5px;
+                margin-left: 6px;
+                background-color: $lightBackgroundColor;
+                border-right: 2px solid $lightBackgroundColor;
+                color: $fontColorLinksNormal;
+                transition: all 0.15s linear;
+                cursor: default;
+            }
+
+            .pane-launch .side-bar .side-nav li i {
+                margin: 0 auto;
+            }
+
+            .pane-launch .side-bar .side-nav li:not(.active):hover {
+                transition: all 0.125s ease-out;
+                width: $launchSidebarWidth - 5px;
+                margin-left: 5px;
+            }
+
+
+
+.pane-launch .area-bleeding {
+    // @include trans-fade-in;
+
+    position: absolute;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    background: $lightBackgroundColor;
+    border-right: 1px solid $mediumBorderColor;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+    .pane-launch .area-bleeding .vert {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pane-launch .area-bleeding .zone-head {
+        flex: 0 0 auto;
+        overflow: visible;
+        padding: 5px 10px 0 10px;
+    }
+
+    .pane-launch .area-bleeding .zone-sect {
+        flex: 1 1 auto;
+        position: relative;
+        min-height: 0px;
+    }
+
+    .pane-launch .area-bleeding .zone-list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 10px;
+    }
+
+
+.pane-launch .area-bleeding .zone-head.zone-shadow {
+    box-shadow: 0 6px 10px -6px rgba(196, 196, 196,1);
+    overflow: visible;
+    z-index: 20;
+    border-bottom: 1px solid $lightBackgroundColor;
+    /*background-color: rgba(248, 248, 248, 0.25);
+    padding-bottom: 5px;*/
+}
+
+
+
+
+// .launch-header-title {
+// }
+
+.launch-header {
+    display: block;
+    margin: 0 4px 5px 0;
+    padding: 0;
+}
+
+.launch-header-icon-trash {
+    cursor: pointer;
+    padding: 4px;
+    font-size: 1em;
+    color: #ccc !important;
+    padding: .20em .22em .15em .28em;
+    width: 1.28571429em;
+    float: right;
+}
+
+    .launch-header-icon-trash:hover,
+    .launch-header-icon-trash:focus {
+        box-shadow: 1px 1px 0 #ccc inset;
+        background-color: #fefefe;
+        color: #d26 !important;
+        border-radius: 50%;
+    }
+
+
+
+.launch-search input,
+.launch-search button {
+    height: 28px;
+}
+
+.launch-options {
+    margin: 3px 0 15px 0;
+}
+
+
+

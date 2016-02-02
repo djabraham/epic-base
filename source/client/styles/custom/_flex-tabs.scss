@@ -1,0 +1,103 @@
+
+
+ul.flex-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0 -3px 2px -2px #f0f0f0 inset;
+    margin: 0;
+}
+
+    ul.flex-tabs li {
+        flex: 1 1 auto;
+        text-align: center;
+        margin-bottom: 1px;
+        background-color: none;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 12px 2px 12px 2px;
+        cursor: pointer;
+        position: relative;
+        color: #226;
+        top: 1px;
+        border: 1px solid rgba(128, 128, 128, 0.25);
+        border-bottom: none;
+        color: transparent;
+        text-shadow: 0 0 0.075px rgba(32, 32, 48, 0.625);
+    }
+
+    ul.flex-tabs > li:first-child {
+        border-left: none;
+        border-top-left-radius: 0;
+    }
+
+    ul.flex-tabs > li:last-child {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: -10px;
+    }
+
+    ul.flex-tabs > li ~ li {
+        margin-left: 5px;
+    }
+
+    ul.flex-tabs li.active {
+        border-color: #ccc;
+        background-color: $lightBackgroundColor;
+        color: #226;
+        text-shadow: none;
+        position: relative;
+        top: 2px;
+    }
+
+    // ul.flex-tabs > li.active:first-child {
+    // }
+    //
+    // ul.flex-tabs > li.active:last-child {
+    // }
+
+.flex-tank {
+    background-color: $lightBackgroundColor;
+    padding-bottom: 14px;
+}
+
+ul.flex-tabs {
+    overflow: visible;
+    background-color: $lightBackgroundColor;
+}
+
+// ul.flex-tabs li {
+//     min-height: 2em;
+// }
+//
+// ul.flex-tabs li.active {
+//     box-shadow: 0 10px 3em #fff inset;
+//     background-color: #f4f4f4;
+//     position: relative;
+//     top: 2px;
+// }
+
+.flex-spread {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.flex-field {
+    align-self: center;
+}
+
+    .flex-field > .btn {
+        min-width: 100px;
+    }
+

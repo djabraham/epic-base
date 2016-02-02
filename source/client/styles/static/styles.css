@@ -1,0 +1,10 @@
+
+.nosel {
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.sel-text {
+    user-select: text;
+}
+

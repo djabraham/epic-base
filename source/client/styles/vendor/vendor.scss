@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import "./normalize";
+
+@import "./mocha";
+
+// @import "./chosen";
+// @import "./bootstrap";
+
+@import "./font-awesome/variables";
+
+// $fontSizeBasis: 13px;  as defined in custom style module
+// $fontSizeSmall: 11px;
+
+// $fa-font-path:        "./fonts" !default;
+$fa-font-size-base:   13px !default;  // 14px !default;
+$fa-line-height-base: 1 !default;
+
+//$fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts" !default; // for referencing Bootstrap CDN font files directly
+$fa-css-prefix:       fa !default;
+$fa-version:          "4.5.0" !default;
+$fa-border-color:     #eee !default;
+$fa-inverse:          #fff !default;
+$fa-li-width:         (30em / 13) !default;  // (30em / 14) !default;
+
+
+@import "./font-awesome/mixins";
+@import "./font-awesome/path";
+@import "./font-awesome/core";
+@import "./font-awesome/larger";
+@import "./font-awesome/fixed-width";
+@import "./font-awesome/list";
+@import "./font-awesome/bordered-pulled";
+@import "./font-awesome/animated";
+@import "./font-awesome/rotated-flipped";
+@import "./font-awesome/stacked";
+@import "./font-awesome/icons";
+
+
+

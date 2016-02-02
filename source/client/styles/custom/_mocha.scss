@@ -1,0 +1,102 @@
+
+#mocha {
+    font: inherit; // 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+    padding: 10px;
+    overflow: visible;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+}
+
+    #mocha h1 {
+        font-weight: 800;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        margin: 20px 0 10px 0;
+    }
+
+    #mocha .suite .suite h1 {
+        font-weight: 500;
+        font-size: 1.0em;
+        line-height: 1.1em;
+        margin: 8px 0;
+    }
+
+    #mocha h2 {
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 1.1em;
+        margin: 4px 0;
+    }
+
+        #mocha h2 a {
+            text-decoration: none;
+        }
+
+            #mocha h2 a:hover {
+                text-decoration: underline;
+            }
+
+    #mocha pre {
+        width: 100%;
+        -webkit-user-select: text;
+        user-select: text;
+    }
+
+    #mocha code {
+        font-weight: 100;
+        font-size: 1.2em;
+    }
+
+        #mocha code .comment {
+            color: #00aa00;
+        }
+
+
+#mocha-error {
+    color: #c00;
+    font-size: 1.5em;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+ul#mocha-stats {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    font-size: 14px;
+    line-height: 1.1em;
+    margin: 0;
+    color: #888;
+    z-index: 1;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.90);
+    border: 1px solid rgba(128,128,128,0.90);
+}
+
+#mocha-stats .progress {
+    display: none;
+}
+
+#mocha .test {
+    overflow: visible;
+}
+
+#mocha .test a.replay {
+    color: #000;
+    font-size: 24px;
+    width: 20px;
+    height: 20px;
+    overflow: visible;
+}
+
+#mocha .test.fail::before,
+#mocha .test.pass::before,
+#mocha .test.pass .duration {
+    font-size: 0.9em;
+}
+
+
